@@ -31,7 +31,7 @@ class LLMCostLogger
         }
         // Make a Guzzle HTTP call
         try {
-            $response = $this->client->post(self::URI, [
+            $response = $this->client->request('POST', self::URI, [
                 'form_params' => [
                     'apikey' => $this->key,
                     'provider' => $provider,
